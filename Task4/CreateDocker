@@ -1,0 +1,16 @@
+#!/bin/bash
+sudo apt update
+
+#нужная штука 
+sudo apt install apt-transport-https
+
+#скачиваем и добавляем какой то ключ
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+#скачиваем только стабильные версии
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt update
+
+#скачиваем и устанавливаем Docker
+sudo apt install docker-ce
+y
